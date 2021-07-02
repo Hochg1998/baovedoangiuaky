@@ -1,0 +1,15 @@
+CREATE TABLE `products` (
+  `ID` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `price` int,
+  `category_id` int
+);
+CREATE TABLE `categories` (
+  `ID` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+);
+ALTER TABLE
+  `products`
+ADD
+  FOREIGN KEY (`category_id`) REFERENCES `categories` (`ID`);
